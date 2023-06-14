@@ -17,6 +17,10 @@ const getDetail = (id) => {
     return pool.query(`SELECT * FROM products WHERE id = ${id}`);
 }
 
+const getDataByCategory = (category) => {
+    return pool.query(`SELECT * FROM products WHERE category = '${category}'`);
+}
+
 const myProduct = (email) => {
     return pool.query(`SELECT * FROM products WHERE id_seller = '${email}'`);
 }
@@ -37,6 +41,7 @@ const del = (id) => {
 module.exports = {
     get,
     getDetail,
+    getDataByCategory,
     myProduct,
     countData,
     insert,

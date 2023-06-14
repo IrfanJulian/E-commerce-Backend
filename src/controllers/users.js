@@ -185,10 +185,11 @@ const updatePhoto = async (req, res) => {
 
 const updatePerson = async(req, res) => {
     const email = req.params.email;
-    const { name, birth } = req.body;
-    const data = { name, birth, email };
+    const { name, birth, phone, gender } = req.body;
+    const data = { name, birth, phone, gender, email };
     try {
-        await userModel.updatePerson(data);
+        const rest = await userModel.updatePerson(data);
+        console.log(rest);
         return response(res, null, 'success', 200, 'update personal information success' )
     } catch (error) {
         return response(res, null, 'success', 200, 'update personal information failed' )

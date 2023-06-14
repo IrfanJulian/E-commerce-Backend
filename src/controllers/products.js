@@ -47,6 +47,16 @@ const get = async(req,res,next) =>{
     }
   }
 
+  const getDataByCategory = async(req, res) => {
+    const category = req.params.category;
+    try {
+      const { rows } = await productModel.getDataByCategory(category);
+      return response(res, rows, 'success', 200, 'Get Detail Data Success')
+    } catch (error) {
+      return response(res, null, 'error', 400, 'Get Detail Data Failed'); 
+    }
+  }
+
   const myProduct = async(req, res) => {
     const email = req.params.email;
     try {
@@ -84,6 +94,7 @@ const get = async(req,res,next) =>{
   module.exports = {
     get,
     getDetail,
+    getDataByCategory,
     insert,
     myProduct,
     deleteProduct

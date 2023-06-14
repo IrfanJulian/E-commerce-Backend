@@ -31,8 +31,8 @@ const updatePhoto = (data) => {
 };
 
 const updatePerson = (data) => {
-    const { name, birth, email } = data;
-    return pool.query(`UPDATE users SET name = '${name}', birth = '${birth}' where email = '${email}'`);
+    const { name, birth, phone, gender, email } = data;
+    return pool.query(`UPDATE users SET name = '${name}', birth = '${birth}', phone = '${phone}', gender = '${gender}' where email = '${email}'`);
 }
 
 const del = (email) => {
