@@ -1,0 +1,61 @@
+E-commerce:
+psql -U fivildro -h topsy.db.elephantsql.com -d fivildro
+pass: 9lEaQ38n_pXe4qVPbYqBRcRUymROpsU9
+
+USERNAME=fivildro
+HOST=topsy.db.elephantsql.com
+DATABASE=fivildro
+PASSWORD=9lEaQ38n_pXe4qVPbYqBRcRUymROpsU9
+PORT=5432
+
+user: process.env.USERNAME
+host: process.env.HOST
+database: process.env.DATABASE
+password: process.env.PASSWORD
+port: process.env.PORT
+
+user:
+-id
+-name
+-email
+-password
+-phone_number
+-photo
+-gender
+-birth
+-role
+-store_name
+-store_description
+
+category:
+-name
+
+product:
+-name
+-brand
+-price
+-category
+-condition
+-stock
+-description
+-photo
+
+address:
+-name
+-phone
+-address
+-city
+-postal_code
+
+bag:
+-id_user
+-id_product
+
+transactions:
+-id_user
+-id_seller
+-id_product
+-date_order
+-status
+-status_delivery
+
